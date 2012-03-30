@@ -1,0 +1,534 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ortus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-30 14:45+0100\n"
+"PO-Revision-Date: 2012-03-30 14:45+0100\n"
+"Last-Translator: CGG <info@dotharbor.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comments.php:12
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:21
+#: options.php:20
+msgid "Comments"
+msgstr ""
+
+#: comments.php:22
+msgid "Just leave a comment"
+msgstr ""
+
+#: comments.php:27
+#: comments.php:41
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:28
+#: comments.php:42
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:29
+#: comments.php:43
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:53
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:53
+msgid "Leave a Reply to"
+msgstr ""
+
+#: comments.php:57
+msgid "You must be"
+msgstr ""
+
+#: comments.php:57
+msgid "logged in"
+msgstr ""
+
+#: comments.php:57
+msgid "to post a comment"
+msgstr ""
+
+#: comments.php:61
+msgid "Logged in as"
+msgstr ""
+
+#: comments.php:61
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:61
+msgid "Log out"
+msgstr ""
+
+#: comments.php:75
+msgid "Name"
+msgstr ""
+
+#: comments.php:75
+#: comments.php:82
+msgid "(required)"
+msgstr ""
+
+#: comments.php:77
+msgid "Your Name"
+msgstr ""
+
+#: comments.php:82
+msgid "Mail"
+msgstr ""
+
+#: comments.php:84
+msgid "Your Email"
+msgstr ""
+
+#: comments.php:85
+msgid "will not be published"
+msgstr ""
+
+#: comments.php:90
+msgid "Website"
+msgstr ""
+
+#: comments.php:92
+msgid "Your Website"
+msgstr ""
+
+#: comments.php:101
+msgid "Your Comment Here..."
+msgstr ""
+
+#: comments.php:105
+msgid "Submit Comment"
+msgstr ""
+
+#: comments.php:106
+msgid "Cancel"
+msgstr ""
+
+#: comments.php:124
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:85
+msgid "Mainmenu"
+msgstr ""
+
+#: functions.php:124
+msgid "at"
+msgstr ""
+
+#: functions.php:128
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:136
+msgid "Edit"
+msgstr ""
+
+#: header.php:276
+msgid "Search"
+msgstr ""
+
+#: loop-archive.php:9
+msgid "Daily Archives"
+msgstr ""
+
+#: loop-archive.php:12
+msgid "Monthly Archives"
+msgstr ""
+
+#: loop-archive.php:15
+msgid "Yearly Archives"
+msgstr ""
+
+#: loop-archive.php:17
+msgid "Blog Archives"
+msgstr ""
+
+#: loop-archive.php:38
+#: loop-category.php:35
+#: loop-single.php:19
+#: loop-tag.php:27
+#: loop.php:19
+msgid "by"
+msgstr ""
+
+#: loop-archive.php:54
+#: loop-category.php:51
+#: loop-single.php:35
+#: loop-tag.php:43
+msgid "Pages:"
+msgstr ""
+
+#: loop-archive.php:75
+#: loop-category.php:72
+#: loop-tag.php:64
+msgid "Nothing Found"
+msgstr ""
+
+#: loop-archive.php:79
+#: loop-tag.php:68
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr ""
+
+#: loop-category.php:76
+msgid "Apologies, but no results were found for the requested category. Perhaps searching will help find a related post."
+msgstr ""
+
+#: loop-home.php:20
+#: loop.php:34
+msgid "more &raquo;"
+msgstr ""
+
+#: options.php:17
+msgid "Mainarea"
+msgstr ""
+
+#: options.php:18
+msgid "Posts"
+msgstr ""
+
+#: options.php:19
+msgid "Commentarea"
+msgstr ""
+
+#: options.php:21
+msgid "First Sidebar"
+msgstr ""
+
+#: options.php:22
+msgid "Second Sidebar"
+msgstr ""
+
+#: options.php:23
+msgid "Third Sidebar"
+msgstr ""
+
+#: options.php:24
+msgid "First Footerwidgets"
+msgstr ""
+
+#: options.php:25
+msgid "Second Footerwidgets"
+msgstr ""
+
+#: options.php:26
+msgid "Third Footerwidgets"
+msgstr ""
+
+#: options.php:30
+msgid "No"
+msgstr ""
+
+#: options.php:31
+msgid "Top"
+msgstr ""
+
+#: options.php:32
+msgid "Bottom"
+msgstr ""
+
+#: options.php:38
+msgid "Basic Settings"
+msgstr ""
+
+#: options.php:41
+msgid "Blog Title"
+msgstr ""
+
+#: options.php:42
+msgid "Do you want to show the blog title? (Default:yes)"
+msgstr ""
+
+#: options.php:47
+msgid "Logo"
+msgstr ""
+
+#: options.php:48
+msgid "Do you want to use a logo? (Default:no)"
+msgstr ""
+
+#: options.php:53
+msgid "Please upload your logo."
+msgstr ""
+
+#: options.php:58
+msgid "HeroUnit"
+msgstr ""
+
+#: options.php:59
+msgid "Use HeroUnit? (default:no)"
+msgstr ""
+
+#: options.php:65
+msgid "Blog Description"
+msgstr ""
+
+#: options.php:66
+msgid "Do you want to show the blog description? (Default:yes)"
+msgstr ""
+
+#: options.php:71
+msgid "Login Logo"
+msgstr ""
+
+#: options.php:72
+msgid "Do you want to use a logo at the login? (Default:no)"
+msgstr ""
+
+#: options.php:76
+msgid "Please upload your login logo."
+msgstr ""
+
+#: options.php:81
+#: options.php:187
+#: options.php:214
+msgid "Footer"
+msgstr ""
+
+#: options.php:82
+msgid "Change your footer informations here."
+msgstr ""
+
+#: options.php:87
+#: options.php:90
+msgid "Layout"
+msgstr ""
+
+#: options.php:91
+msgid "Select a layout for your Page"
+msgstr ""
+
+#: options.php:103
+msgid "Footer Widgets"
+msgstr ""
+
+#: options.php:104
+msgid "Do you want to use footer widgets? (Default:no)"
+msgstr ""
+
+#: options.php:109
+msgid "Wells"
+msgstr ""
+
+#: options.php:110
+msgid "Choose where you want to display Wells"
+msgstr ""
+
+#: options.php:116
+msgid "Backgrounds"
+msgstr ""
+
+#: options.php:119
+msgid "Main Background"
+msgstr ""
+
+#: options.php:120
+#: options.php:125
+#: options.php:130
+#: options.php:135
+msgid "If nothing selected, the default image will be used."
+msgstr ""
+
+#: options.php:124
+msgid "Well Background"
+msgstr ""
+
+#: options.php:129
+msgid "HeroUnit Background"
+msgstr ""
+
+#: options.php:134
+msgid "Footer Background"
+msgstr ""
+
+#: options.php:139
+msgid "Typography"
+msgstr ""
+
+#: options.php:142
+msgid "Custom Fonts"
+msgstr ""
+
+#: options.php:143
+msgid "Do you want to use custom fonts?"
+msgstr ""
+
+#: options.php:147
+msgid "Webfonts"
+msgstr ""
+
+#: options.php:148
+msgid "Do you want to use webfonts?"
+msgstr ""
+
+#: options.php:152
+msgid "Import"
+msgstr ""
+
+#: options.php:153
+msgid "Add your webfont import link here."
+msgstr ""
+
+#: options.php:159
+#: options.php:194
+msgid "Headings"
+msgstr ""
+
+#: options.php:160
+msgid "Add the headings css here."
+msgstr ""
+
+#: options.php:166
+#: options.php:199
+msgid "Body"
+msgstr ""
+
+#: options.php:167
+msgid "Add the body css here."
+msgstr ""
+
+#: options.php:173
+#: options.php:204
+msgid "Pagetitle"
+msgstr ""
+
+#: options.php:174
+msgid "Add the title css here."
+msgstr ""
+
+#: options.php:180
+#: options.php:209
+msgid "Description"
+msgstr ""
+
+#: options.php:181
+msgid "Add the description css here."
+msgstr ""
+
+#: options.php:188
+msgid "Add the footer css here."
+msgstr ""
+
+#: options.php:195
+#: options.php:200
+#: options.php:205
+#: options.php:210
+#: options.php:215
+msgid "Default will be used, if nothing selected"
+msgstr ""
+
+#: options.php:219
+#: options.php:222
+msgid "Navbar"
+msgstr ""
+
+#: options.php:223
+msgid "Do you want to use the navbar? (Default: yes)"
+msgstr ""
+
+#: options.php:228
+msgid "Navbar Fixed"
+msgstr ""
+
+#: options.php:229
+msgid "Default not fixed."
+msgstr ""
+
+#: options.php:236
+msgid "Searchfield"
+msgstr ""
+
+#: options.php:237
+msgid "Do you want to show the searchfield? (Default: yes)"
+msgstr ""
+
+#: options.php:243
+msgid "Social"
+msgstr ""
+
+#: options.php:247
+msgid "Link to your Google+ Page."
+msgstr ""
+
+#: options.php:252
+msgid "Link to your Facebook Page."
+msgstr ""
+
+#: options.php:257
+msgid "Link to your Twitter Page."
+msgstr ""
+
+#: options.php:262
+msgid "Link to your LinkedIn Page."
+msgstr ""
+
+#: options.php:267
+msgid "Link to your RSS Feed."
+msgstr ""
+
+#: options.php:271
+msgid "Custom CSS"
+msgstr ""
+
+#: options.php:277
+msgid "Custom JavaScript"
+msgstr ""
+
+#: sidebar-footer.php:6
+#: sidebar-footer.php:18
+#: sidebar-footer.php:30
+#: sidebar-second.php:7
+msgid "Archive"
+msgstr ""
+
+#: admin/options-framework.php:240
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: admin/options-framework.php:272
+msgid "Default options restored."
+msgstr ""
+
+#: admin/options-framework.php:313
+msgid "Options saved."
+msgstr ""
+
+#: admin/options-framework.php:369
+msgid "Theme Options"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr ""
+
