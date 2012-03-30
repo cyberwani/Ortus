@@ -26,18 +26,18 @@ I wanted to port the Twitter Bootstrap to Wordpress. This is the current state:
 Added shortcodes to use some features of Twitter Bootstrap
 *Added all shortcoes to TinyMCE*
 
-*Buttons
-*Alerts
-*Badges
-*Labels
+* Buttons
+* Alerts
+* Badges
+* Labels
 
 #Changelog
 
 ##0.6
-added support for sidebar text alignment
+* added support for sidebar text alignment
 
 ##v0.5
-*initial release
+* initial release
 
 #Thanks
 [Twitter Bootstrap](http://twitter.github.com/bootstrap/ "Twitter Bootstrap") and [Wordpress](http://wordpress.org/ "Wordpress")
