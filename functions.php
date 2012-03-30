@@ -1,5 +1,6 @@
 <?
 include('lib/ortus/options.php');
+include('lib/ortus/ortus.php');
 include('lib/ortus/pagination.php');
 include('lib/ortus/shortcodes.php');
 
