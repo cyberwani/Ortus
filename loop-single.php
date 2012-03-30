@@ -14,10 +14,10 @@
 					
 				<div class="article-header">	
 					<div class="page-header">
-						<h3>
+						<h1>
 							<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 							<small><time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_date(); ?></time> <?php __("by", "ortus"); ?> <?php the_author_posts_link(); ?></small>
-						</h3>								
+						</h1>								
 					</div>
 							
 				</div>
