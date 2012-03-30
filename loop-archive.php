@@ -1,21 +1,33 @@
 <? $well = of_get_option('wells'); ?>
 
 	<div id="content" <? if($well["1"]) echo 'class="well"'; ?>>
-		
+
 		<div class="page-header">
 			<h1 class="page-title">
-				<?php if ( is_day() ) : ?>
+				<? if ( is_day() ) { ?>
 					<? echo get_the_date(); ?>
 					<small><? echo __("Daily Archives","ortus"); ?></small>
-				<?php elseif ( is_month() ) : ?>
+				<? } elseif ( is_month() ) { ?>
 					<? echo get_the_date('F Y'); ?>
 					<small><? echo __("Monthly Archives","ortus"); ?></small>
-				<?php elseif ( is_year() ) : ?>
+				<? } elseif ( is_year() ) { ?>
 					<? echo get_the_date('Y'); ?>
 					<small><? echo __("Yearly Archives","ortus"); ?></small>
-				<?php else : ?>
-					<?php __( 'Blog Archives', 'ortus' ); ?>
-				<?php endif; ?>
+				<? } elseif(is_tag()) { ?>
+					<? echo single_tag_title( '', false ); ?>
+				<? } elseif(is_category()) { ?>
+					<? echo single_cat_title( '', false ); ?>
+					<small>
+						<?php
+							$categories = get_the_category();
+							$category_description = $categories[0]->category_description;
+							if ( ! empty( $category_description ) )
+								echo $category_description;
+						?>
+					</small>
+				<? } else { ?>
+					<? echo __( 'Blog Archives', 'ortus' ); ?>
+				<? } ?>
 			</h1>
 		</div>
 		

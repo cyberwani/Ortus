@@ -6,11 +6,7 @@ if(of_get_option('layout') == '1c-l'){ ?>
 			<? get_sidebar(); ?>
 		</div>
 		<div class="span7">
-			<? if(is_category())
-				get_template_part('loop', 'category');
-			elseif(is_tag())
-				get_template_part('loop', 'tag');
-			elseif(is_archive())
+			<? if(is_archive())
 				get_template_part('loop', 'archive');
 			else
 				get_template_part('loop', 'index'); ?>
@@ -19,11 +15,7 @@ if(of_get_option('layout') == '1c-l'){ ?>
 <? } elseif(of_get_option('layout') == '1c-r'){ ?>
 	<div class="row">
 		<div class="span7 offset1">
-			<? if(is_category())
-				get_template_part('loop', 'category');
-			elseif(is_tag())
-				get_template_part('loop', 'tag');
-			elseif(is_archive())
+			<? if(is_archive())
 				get_template_part('loop', 'archive');
 			else
 				get_template_part('loop', 'index'); ?>
@@ -38,11 +30,7 @@ if(of_get_option('layout') == '1c-l'){ ?>
 			<? get_sidebar(); ?>
 		</div>
 		<div class="span6">
-			<? if(is_category())
-				get_template_part('loop', 'category');
-			elseif(is_tag())
-				get_template_part('loop', 'tag');
-			elseif(is_archive())
+			<? if(is_archive())
 				get_template_part('loop', 'archive');
 			else
 				get_template_part('loop', 'index'); ?>
@@ -54,11 +42,7 @@ if(of_get_option('layout') == '1c-l'){ ?>
 <? } elseif(of_get_option('layout') == '2c-r'){ ?>
 	<div class="row">		
 		<div class="span6">
-			<? if(is_category())
-				get_template_part('loop', 'category');
-			elseif(is_tag())
-				get_template_part('loop', 'tag');
-			elseif(is_archive())
+			<? if(is_archive())
 				get_template_part('loop', 'archive');
 			else
 				get_template_part('loop', 'index'); ?>
@@ -79,11 +63,7 @@ if(of_get_option('layout') == '1c-l'){ ?>
 			<? get_sidebar('second'); ?>
 		</div>
 		<div class="span6">
-			<? if(is_category())
-				get_template_part('loop', 'category');
-			elseif(is_tag())
-				get_template_part('loop', 'tag');
-			elseif(is_archive())
+			<? if(is_archive())
 				get_template_part('loop', 'archive');
 			else
 				get_template_part('loop', 'index'); ?>
