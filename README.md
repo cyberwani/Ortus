@@ -1,4 +1,4 @@
-#Ortus - Twitter Bootstrap for Wordpress v0.6.1
+#Ortus - Twitter Bootstrap for Wordpress v0.7
 
 I wanted to port the Twitter Bootstrap to Wordpress. This is the current state:
 
@@ -31,7 +31,16 @@ Added shortcodes to use some features of Twitter Bootstrap
 * Badges
 * Labels
 
+##Other
+
+* Responsive Design (Smartphone/Tablet & Desktop)
+
 #Changelog
+
+##0.7
+* merged some archive loops
+* some minor bugs fixed
+* the theme is responsive now
 
 ##0.6.1
 * changed some headings
