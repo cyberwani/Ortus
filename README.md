@@ -1,4 +1,4 @@
-#Ortus - Twitter Bootstrap for Wordpress v0.6
+#Ortus - Twitter Bootstrap for Wordpress v0.6.1
 
 I wanted to port the Twitter Bootstrap to Wordpress. This is the current state:
 
@@ -32,6 +32,9 @@ Added shortcodes to use some features of Twitter Bootstrap
 * Labels
 
 #Changelog
+
+##0.6.1
+* changed some headings
 
 ##0.6
 * added support for sidebar text alignment
