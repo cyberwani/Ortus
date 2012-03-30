@@ -26,7 +26,7 @@ function ortus_navbar(){ ?>
 
 						<? if(of_get_option('navbar_search')) {?>
 							<form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<? echo home_url( '/' ); ?>">
-								<input name="s" id="s" type="text" class="search-query" placeholder="<? __('Search','ortus'); ?>">
+								<input name="s" id="s" type="text" class="search-query" placeholder="<? echo __('Search','ortus'); ?>">
 							</form>
 						<? } ?>
 
