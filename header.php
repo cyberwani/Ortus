@@ -8,7 +8,8 @@
 	    <meta name="author" content="">
 
 	    <!-- Add Bootstrap and Ortus Css !-->
-	    <style> <!-- Required here for correct responsive behaviour! !-->
+	    <!-- Required here for correct responsive behaviour! !-->
+	    <style> 
 	    	body{
 	    		padding-top: 60px;
 	    	}
