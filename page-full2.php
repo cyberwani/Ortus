@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full Width
+Template Name: Full Width (No Title, Tags, Cats, Comments)
 */
 ?>
 
@@ -8,7 +8,7 @@ Template Name: Full Width
 
 <div class="row">
 	<div class="span10 offset1">
-		<? get_template_part('loop'); ?>
+		<? get_template_part('loop', 'full2'); ?>
 	</div>
 </div>
 

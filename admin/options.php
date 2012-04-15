@@ -28,9 +28,7 @@ jQuery(document).ready(function() {
 	jQuery('#blogtitle').click(function() {
 		if (jQuery('#blogtitle:checked').val() !== undefined)
 		{
-			if(!jQuery("#section-logo").is(":visible"))
-				jQuery('#section-logo').fadeToggle(400);
-			if(!jQuery("#section-logoimg").is(":visible") && jQuery('#logo:checked').val() !== undefined)
+			if(!jQuery("#section-logoimg").is(":visible"))
 				jQuery('#section-logoimg').fadeToggle(400);
 				
 			if(!jQuery("#section-herounit").is(":visible"))
@@ -38,8 +36,6 @@ jQuery(document).ready(function() {
 		}
 		else
 		{
-			if(jQuery("#section-logo").is(":visible"))
-				jQuery('#section-logo').fadeToggle(400);
 			if(jQuery("#section-logoimg").is(":visible"))
 				jQuery('#section-logoimg').fadeToggle(400);
 				
@@ -49,51 +45,61 @@ jQuery(document).ready(function() {
 	});
 
 	if (jQuery('#blogtitle:checked').val() !== undefined) {
-		jQuery('#section-logo').show();
-		jQuery('#section-herounit').show();
-		
-		if (jQuery('#logo:checked').val() !== undefined && jQuery("#section-logo").is(":visible")) {
-			jQuery('#section-logoimg').show();
-		}
-	}
-	
-	jQuery('#loginlogo').click(function() {
-  		jQuery('#section-loginimg').fadeToggle(400);
-	});
-	
-	if (jQuery('#loginlogo:checked').val() !== undefined) {
-		jQuery('#section-loginimg').show();
-	}
-	
-	jQuery('#logo').click(function() {
-  		jQuery('#section-logoimg').fadeToggle(400);
-	});
-	
-	if (jQuery('#logo:checked').val() !== undefined && jQuery('#blogtitle:checked').val() !== undefined) {
 		jQuery('#section-logoimg').show();
+		jQuery('#section-herounit').show();
 	}
 
 	jQuery('#navbar').click(function() {
   		jQuery('#section-navbar_fixed').fadeToggle(400);
 		jQuery('#section-navbar_search').fadeToggle(400);
+		jQuery('#section-navbar_back').fadeToggle(400);
+		jQuery('#section-navbar_bgc').fadeToggle(400);
+		jQuery('#section-navbar_gradient').fadeToggle(400);
+		jQuery('#section-navbar_gbgc1').fadeToggle(400);
+		jQuery('#section-navbar_gbgc2').fadeToggle(400);
 	});
 	
 	if (jQuery('#navbar:checked').val() !== undefined) {
 		jQuery('#section-navbar_fixed').show();
 		jQuery('#section-navbar_search').show();
+		jQuery('#section-navbar_back').show();
+		jQuery('#section-navbar_bgc').show();
+		jQuery('#section-navbar_gradient').show();
+		jQuery('#section-navbar_gbgc1').show();
+		jQuery('#section-navbar_gbgc2').show();
 	}
 	
+	jQuery('#postslider').click(function() {
+  		jQuery('#section-postslider_cat').fadeToggle(400);
+		jQuery('#section-postslider_max').fadeToggle(400);
+		jQuery('#section-postslider_home').fadeToggle(400);
+		jQuery('#section-postslider_height').fadeToggle(400);
+		jQuery('#section-postslider_caption').fadeToggle(400);
+	});
+
+	if (jQuery('#postslider:checked').val() !== undefined) {
+		jQuery('#section-postslider_cat').show();
+		jQuery('#section-postslider_max').show();
+		jQuery('#section-postslider_home').show();
+		jQuery('#section-postslider_height').show();
+		jQuery('#section-postslider_caption').show();
+	}
+
 	jQuery('#webfonts').click(function() {
   		jQuery('#section-webfonts_import').fadeToggle(400);
 		jQuery('#section-webfonts_headings').fadeToggle(400);
 		jQuery('#section-webfonts_body').fadeToggle(400);
 		jQuery('#section-webfonts_title').fadeToggle(400);
 		jQuery('#section-webfonts_desc').fadeToggle(400);
+		jQuery('#section-webfonts_navbar').fadeToggle(400);
+		jQuery('#section-webfonts_slider').fadeToggle(400);
 		jQuery('#section-webfonts_footer').fadeToggle(400);
 		jQuery('#section-heading_typo').fadeToggle(400);
 		jQuery('#section-body_typo').fadeToggle(400);
 		jQuery('#section-title_typo').fadeToggle(400);
 		jQuery('#section-desc_typo').fadeToggle(400);
+		jQuery('#section-navbar_typo').fadeToggle(400);
+		jQuery('#section-slider_typo').fadeToggle(400);
 		jQuery('#section-footer_typo').fadeToggle(400);
 	});
 	
@@ -103,11 +109,15 @@ jQuery(document).ready(function() {
 		jQuery('#section-webfonts_body').show();
 		jQuery('#section-webfonts_title').show();
 		jQuery('#section-webfonts_desc').show();
+		jQuery('#section-webfonts_navbar').show();
+		jQuery('#section-webfonts_slider').show();
 		jQuery('#section-webfonts_footer').show();
 		jQuery('#section-heading_typo').hide();
 		jQuery('#section-body_typo').hide();
 		jQuery('#section-title_typo').hide();
 		jQuery('#section-desc_typo').hide();
+		jQuery('#section-slider_typo').hide();
+		jQuery('#section-navbar_typo').hide();
 		jQuery('#section-footer_typo').hide();
 	}
 	

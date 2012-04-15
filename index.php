@@ -8,6 +8,19 @@ if(of_get_option('layout') == '1c-l'){ ?>
 		<div class="span7">
 			<? if(is_archive())
 				get_template_part('loop', 'archive');
+			elseif(is_single())
+				get_template_part('loop', 'single');
+			else
+				get_template_part('loop', 'index'); ?>
+		</div>
+	</div>
+<? } elseif(of_get_option('layout') == '1c'){ ?>
+	<div class="row">
+		<div class="span10 offset1">
+			<? if(is_archive())
+				get_template_part('loop', 'archive');
+			elseif(is_single())
+				get_template_part('loop', 'single');
 			else
 				get_template_part('loop', 'index'); ?>
 		</div>
@@ -17,6 +30,8 @@ if(of_get_option('layout') == '1c-l'){ ?>
 		<div class="span7 offset1">
 			<? if(is_archive())
 				get_template_part('loop', 'archive');
+			elseif(is_single())
+				get_template_part('loop', 'single');
 			else
 				get_template_part('loop', 'index'); ?>
 		</div>
@@ -32,6 +47,8 @@ if(of_get_option('layout') == '1c-l'){ ?>
 		<div class="span6">
 			<? if(is_archive())
 				get_template_part('loop', 'archive');
+			elseif(is_single())
+				get_template_part('loop', 'single');
 			else
 				get_template_part('loop', 'index'); ?>
 		</div>
@@ -44,6 +61,8 @@ if(of_get_option('layout') == '1c-l'){ ?>
 		<div class="span6">
 			<? if(is_archive())
 				get_template_part('loop', 'archive');
+			elseif(is_single())
+				get_template_part('loop', 'single');
 			else
 				get_template_part('loop', 'index'); ?>
 		</div>
@@ -65,6 +84,8 @@ if(of_get_option('layout') == '1c-l'){ ?>
 		<div class="span6">
 			<? if(is_archive())
 				get_template_part('loop', 'archive');
+			elseif(is_single())
+				get_template_part('loop', 'single');
 			else
 				get_template_part('loop', 'index'); ?>
 		</div>

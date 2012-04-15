@@ -31,206 +31,7 @@
 		<!-- Now add the custom css from the admin panel -->
 		<?   
 			wp_head(); 
-		
-			$user_styles = '';		
-
-			//If we want to use custom fonts but no webfonts
-			if(!of_get_option('webfonts') && of_get_option('fonts')){
-				$heading_typo = of_get_option('heading_typo');
-				if ($heading_typo) {
-					$user_styles .= '
-					h1, h2, h3, h4, h5, h6{ 
-						font-family: ' . $heading_typo['face'] . '; 
-						font-style: ' . $heading_typo['style'] . '; 
-						font-weight: ' . $heading_typo['style'] . '; 
-						color: ' . $heading_typo['color'] . '; 
-					}';
-				}
-					
-				$body_typo = of_get_option('body_typo');
-				if ($body_typo) {
-					$user_styles .= '
-					body, p{ 
-						font-family: ' . $body_typo['face'] . '; 
-						font-style: ' . $body_typo['style'] . '; 
-						font-weight: ' . $body_typo['style'] . '; 
-						color: ' . $body_typo['color'] . '; 
-						font-size: ' . $body_typo['size'] . '; 
-					}';
-				}
-				
-				$title_typo = of_get_option('title_typo');
-				if ($title_typo) {
-					$user_styles .= '
-					#ortus-pagetitle{ 
-						font-family: ' . $title_typo['face'] . '; 
-						font-style: ' . $title_typo['style'] . '; 
-						font-weight: ' . $title_typo['style'] . '; 
-						color: ' . $title_typo['color'] . '; 
-						font-size: ' . $title_typo['size'] . '; 
-					}';
-				}
-
-				$desc_typo = of_get_option('desc_typo');
-				if ($desc_typo) {
-					$user_styles .= '
-					#ortus-pagedescription{ 
-						font-family: ' . $desc_typo['face'] . '; 
-						font-style: ' . $desc_typo['style'] . '; 
-						font-weight: ' . $desc_typo['style'] . '; 
-						color: ' . $desc_typo['color'] . '; 
-						font-size: ' . $desc_typo['size'] . '; 
-					}';
-				}
-
-				$footer_typo = of_get_option('footer_typo');
-				if ($footer_typo) {
-					$user_styles .= '
-					#footer p{ 
-						font-family: ' . $footer_typo['face'] . '; 
-						font-style: ' . $footer_typo['style'] . '; 
-						font-weight: ' . $footer_typo['style'] . '; 
-						color: ' . $footer_typo['color'] . '; 
-						font-size: ' . $footer_typo['size'] . '; 
-					}';
-				}
-			}
-			//We use webfonts
-			else{
-				$user_styles .= '@import url(' . of_get_option('webfonts_import') . ');';
-				$user_styles .= '
-					h1, h2, h3, h4, h5, h6{ 
-						' . of_get_option('webfonts_headings') . ' 
-					}';
-				$user_styles .= '
-					body, p{ 
-						' . of_get_option('webfonts_body') . ' 
-					}';
-				$user_styles .= '
-					#ortus-pagedescription{ 
-						' . of_get_option('webfonts_desc') . ' 
-					}';
-				$user_styles .= '
-					#footer p{ 
-						' . of_get_option('webfonts_footer') . ' 
-					}';
-				$user_styles .= '
-					#ortus-pagetitle{ 
-						' . of_get_option('webfonts_title') . ' 
-					}';
-			}
-			
-			//The Page Background
-			if(of_get_option('main_background')){
-				$main_background = of_get_option('main_background');
-				if ($main_background) {
-
-					$style = "";
-					if($main_background['image'] != "") {
-						$style .= "url('" . $main_background['image'] . "') " . $main_background['repeat'] . " " . $main_background['position'] . " " . $main_background['scroll'];
-					}
-					if($main_background['color'] != "") {
-						$style .= $main_background['color'];
-					}
-					$style .= ";";
-
-					$user_styles .= "
-						body{
-							background:" . $style  . "
-						}";
-				}
-			}
-
-			//The Footer Background
-			if(of_get_option('footer_background')){
-				$footer_background = of_get_option('footer_background');
-				if ($footer_background) {
-
-					$style = "";
-					if($footer_background['image'] != "") {
-						$style .= "url('" . $footer_background['image'] . "') " . $footer_background['repeat'] . " " . $footer_background['position'] . " " . $footer_background['scroll'];
-					}
-					if($footer_background['color'] != "") {
-						$style .= $footer_background['color'];
-					}
-					$style .= ";";
-
-					$user_styles .= "
-						#footer{
-							background:" . $style  . "
-						}";
-				}
-			}
-
-			//The Wells Background
-			if(of_get_option('well_background')){
-				$well_background = of_get_option('well_background');
-				if ($well_background) {
-
-					$style = "";
-					if($well_background['image'] != "") {
-						$style .= "url('" . $well_background['image'] . "') " . $well_background['repeat'] . " " . $well_background['position'] . " " . $well_background['scroll'];
-					}
-					if($well_background['color'] != "") {
-						$style .= $well_background['color'];
-					}
-					$style .= ";";
-
-					$user_styles .= "
-						.well{
-							background:" . $style  . "
-						}";
-				}
-			}
-			
-			//The HeroUnit
-			if(of_get_option('herounit')){
-				$hero_background = of_get_option('hero_background');
-				if ($hero_background) {
-
-					$style = "";
-					if($hero_background['image'] != "") {
-						$style .= "url('" . $hero_background['image'] . "') " . $hero_background['repeat'] . " " . $hero_background['position'] . " " . $hero_background['scroll'];
-					}
-					if($hero_background['color'] != "") {
-						$style .= $hero_background['color'];
-					}
-					$style .= ";";
-
-					$user_styles .= "
-						.hero-unit{
-							background:" . $style  . "
-						}";
-				}
-			}
-			
-			//Sidebar Text Alignment
-			$sb_align = of_get_option('sb_alignment');
-			if($sb_align == 2){
-				$user_styles .= "
-					.ortus-sb{
-						text-align:right;
-					}";
-			}
-			elseif($sb_align == 3){
-				$user_styles .= "
-					.ortus-sb{
-						text-align:center;
-					}";
-			}
-
-			//Custom Css
-			if(of_get_option('custom_css') != "")
-				$user_styles .= of_get_option('custom_css');
-			
-			if($user_styles){
-				echo '<style>' . $user_styles . '</style>';
-			}
-
-			//Custom JS
-			if(of_get_option('custom_js') != ""){
-				echo '<script type="text/javascript">' . of_get_option('custom_js') . '</script>';
-			}
+			ortus_customcss();
 		?>
 	</head>
 	<body>
@@ -238,7 +39,8 @@
 		<?
 
 		//$head_span
-		if(of_get_option('layout') == '1c-l' || of_get_option('layout') == '1c-r') $head_span = 'span10 offset1'; else $head_span = 'span12'; ?>
+		if(of_get_option('layout') == '1c-l' || of_get_option('layout') == '1c-r' || of_get_option('layout') == '1c'){ $head_span = 'span10 offset1'; $span_count = 10; } 
+		else { $head_span = 'span12'; $span_count = 12; } ?>
 
 		<div id="main">
 			<div class="container">	
@@ -248,11 +50,11 @@
 				<div class="row">	
 					<div id="header" class="<? echo $head_span; ?>">
 						
-						<? ortus_get_social(); ?>	
+						<? ortus_social(); ?>	
 						
 						<? if(of_get_option('blogtitle')) { ?>																	<!-- If the blogtitle is enabled -->
-							<div <? if(of_get_option('herounit')) echo 'class="hero-unit"'; ?>>									<!-- If the herounit is enabled -->			
-								<? if(of_get_option('logo')){ ?> 																<!-- If the logo is enabled -->	
+							<div <? if(of_get_option('herounit')) echo 'class="hero-unit"'; ?>>				<!-- If the herounit is enabled -->			
+								<? if(of_get_option('logoimg')){ ?> 															<!-- If the logo is enabled -->	
 									<? if(of_get_option('blogdesc')) { ?>														<!-- If the description is enabled -->	
 										<div id="ortus-pagedescription">					
 											<? bloginfo( 'description' ); ?>
@@ -278,4 +80,11 @@
 					</div>	
 				</div>
 
-				<? if(of_get_option('navbar') && of_get_option('navbar_fixed') == 1) ortus_navbar(); ?>
+				<? if(of_get_option('navbar') && of_get_option('navbar_fixed') == 1) ortus_navbar($head_span); ?>
+				
+				<?
+					if(of_get_option('postslider')){
+						if(is_front_page() || !of_get_option('postslider_home'))
+							ortus_slider($head_span, $span_count);
+					} ?>
+

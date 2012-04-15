@@ -1,5 +1,5 @@
 <?
-include('lib/ortus/options.php');
+include('admin/options.php');
 include('lib/ortus/ortus.php');
 include('lib/ortus/pagination.php');
 include('lib/ortus/shortcodes.php');
@@ -89,7 +89,7 @@ add_action('init', 'ortus_main_menu');
 
 /* Admin Logo */
 
-if(of_get_option('loginlogo')){
+if(of_get_option('loginimg')){
 	add_action("login_head", "ortus_login_head");
 }
 
@@ -106,132 +106,6 @@ function ortus_login_head() {
 	}
 	</style>
 	";
-}
-
-/* Comment Template */
-
-function ortus_comments($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?>>
-		<div id="comment-<?php comment_ID(); ?>" class="single-comment clearfix">
-			<div class="comment-author vcard row-fluid clearfix">
-				<div class="avatar span2">
-					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>					
-				</div>
-				<div class="span10 comment-text">
-					<div class="page-header">
-						<?php 
-						$time = '<time datetime=' . get_comment_date() . '"><a href="' . htmlspecialchars( get_comment_link( $comment->comment_ID ) ) . '">' . get_comment_date() . '</a></time>';
-						printf('<h3>%s<small> ' . __("at", "ortus") . " " . $time . '</small></h3>', get_comment_author_link()) ?>
-                    </div>
-                    <?php if ($comment->comment_approved == '0') : ?>
-       					<div class="alert-message success">
-          				<p><?php _e('Your comment is awaiting moderation.','ortus') ?></p>
-          				</div>
-					<?php endif; ?>
-                    
-                    <?php comment_text() ?>
-                    
-                    <div class="comment-options" style="float:right;">
-                    	<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-                    	<?php edit_comment_link(__('Edit','ortus')) ?>
-                    </div>
-                </div>
-			</div>
-		</div>
-    <!-- </li> is added by wordpress automatically -->
-<?php
-} 
-
-/* Some Functions */
-
-function ortus_get_social(){
-	echo '<div id="ortus-social"><ul>';
-	
-	if(of_get_option('social_google') != ""){
-		echo '<li><a target="_blank" href="' . of_get_option('social_google') . '" title="Google+">' .
-				'<img src="' . get_bloginfo('stylesheet_directory') . '/lib/ortus/img/googleplus.png" alt="Google+"/></a></li>';
-	}
-	if(of_get_option('social_fb') != ""){
-		echo '<li><a target="_blank" href="' . of_get_option('social_fb') . '" title="Facebook">' .
-				'<img src="' . get_bloginfo('stylesheet_directory') . '/lib/ortus/img/facebook.png" alt="Facebook"/></a></li>';
-	}
-	if(of_get_option('social_tw') != ""){
-		echo '<li><a target="_blank" href="' . of_get_option('social_tw') . '" title="Twitter">' .
-				'<img src="' . get_bloginfo('stylesheet_directory') . '/lib/ortus/img/twitter.png" alt="Twitter"/></a></li>';
-	}
-	if(of_get_option('social_linkedin') != ""){
-		echo '<li><a target="_blank" href="' . of_get_option('social_linkedin') . '" title="LinkedIn">' .
-				'<img src="' . get_bloginfo('stylesheet_directory') . '/lib/ortus/img/linkedin.png" alt="LinkedIn"/></a></li>';
-	}
-	if(of_get_option('social_feed') != ""){
-		echo '<li><a target="_blank" href="' . of_get_option('social_feed') . '" title="RSS">' .
-				'<img src="' . get_bloginfo('stylesheet_directory') . '/lib/ortus/img/rss.png" alt="RSS"/></a></li>';
-	}
-	
-	echo '</ul></div>';
-}
-
-function ortus_commentcount($id){
-	$count = get_comments_number();
-	
-	echo '<div class="article-comments">';
-	
-	if(!comments_open($id)){
-		echo '<a class="btn btn-danger disabled" href="' . get_permalink($id) . '#comments"><i class="icon-comment"></i> -</a>';
-	}
-	else if($count == 0){
-		echo '<a class="btn btn-warning" href="' . get_permalink($id) . '#comments"><i class="icon-comment"></i> 0</a>';
-	}
-	else if($count == 1){
-		echo '<a class="btn btn-success" href="' . get_permalink($id) . '#comments"><i class="icon-comment"></i> ' . $count . '</a>';
-	}
-	else{
-		echo '<a class="btn btn-success" href="' . get_permalink($id) . '#comments"><i class="icon-comment"></i> ' . $count . '</a>';
-	}
-	
-	echo '</div>';
-}
-
-function ortus_categories(){
-	echo '<div class="article-categories">';
-	$categories_list = get_the_category();
-	if(is_array($categories_list) && count($categories_list) > 0){ ?>
-		<div class="btn-group">
-			<a class="btn btn-info btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
-				<? echo '<i class="icon-bookmark"></i> ' . count($categories_list); ?>
-				<span class="caret"></span>
-			</a>
-			<ul class="dropdown-menu">
-				<? foreach($categories_list  as $category){
-					echo '<li><a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a></li>';
-				} ?>
-			</ul>
-		</div>
-	<? }
-	echo '</div>';
-}
-
-function ortus_tags(){
-	$categories_list = get_the_category();
-	
-	echo '<div class="article-tags ">';
-
-	$tag_list = get_the_tags();
-	if(is_array($tag_list)){ ?>
-		<div class="btn-group">
-			<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">
-				<? echo '<i class="icon-tag"></i> ' . count($tag_list); ?>
-				<span class="caret"></span>
-			</a>
-			<ul class="dropdown-menu">
-				<? foreach($tag_list  as $tag){
-					echo '<li><a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a></li>';
-				} ?>
-			</ul>
-		</div>
-	<? }
-	echo '</div>';
 }
 
 class description_walker extends Walker_Nav_Menu

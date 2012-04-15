@@ -13,7 +13,7 @@
 					<?php if(has_post_thumbnail()) { ?>
 						<div class="article-img">
 							<? $thumbUrl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
-							<img src="<?php bloginfo('stylesheet_directory'); ?>/lib/timthumb.php?src=<?php echo $thumbUrl[0]; ?>&amp;w=100" title="<?php the_title(); ?>"/>	
+							<img src="<?php bloginfo('stylesheet_directory'); ?>/lib/ortus/timthumb.php?src=<?php echo $thumbUrl[0]; ?>&amp;w=100" title="<?php the_title(); ?>"/>	
 						</div>
 					<? } ?>
 							

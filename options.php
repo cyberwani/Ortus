@@ -37,6 +37,12 @@ function optionsframework_options() {
 						
 	$layouts =  get_bloginfo('template_directory') . '/admin/images/layouts/';
 						
+	$categories = array();  
+	$categories_obj = get_categories(array('hide_empty' => 0));
+	foreach ($categories_obj as $category) {
+    	$categories[$category->cat_ID] = $category->cat_name;
+	}
+
 	$options = array();
 	
 	$options[] = array( "name" => __("Basic Settings", "ortus"),
@@ -48,13 +54,8 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 	
-	$options[] = array( "name" => __("Logo", "ortus"),
-						"desc" => __("Do you want to use a logo? (Default:no)", "ortus"),
-						"id" => "logo",
-						"class" => "hidden",
-						"type" => "checkbox");
-	
-	$options[] = array( "desc" => __("Please upload your logo.", "ortus"),
+	$options[] = array("name" => __("Logo", "ortus"),
+						"desc" => __("Please upload your logo.", "ortus"),
 						"id" => "logoimg",
 						"class" => "hidden",
 						"type" => "upload");
@@ -72,14 +73,9 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 	
-	$options[] = array( "name" => __("Login Logo", "ortus"),
-						"desc" => __("Do you want to use a logo at the login? (Default:no)", "ortus"),
-						"id" => "loginlogo",
-						"type" => "checkbox");
-	
-	$options[] = array( "desc" => __("Please upload your login logo.", "ortus"),
+	$options[] = array("name" => __("Login Logo", "ortus"),
+						"desc" => __("Please upload your login logo.", "ortus"),
 						"id" => "loginimg",
-						"class" => "hidden",
 						"type" => "upload");
 
 	$options[] = array( "name" => __("Footer", "ortus"),
@@ -101,7 +97,8 @@ function optionsframework_options() {
 							'2c-l-r' => $layouts . '2.png',
 							'1c-r' => $layouts . '3.png',
 							'2c-r' => $layouts . '4.png',
-							'2c-l' => $layouts . '5.png')
+							'2c-l' => $layouts . '5.png',
+							'1c' => $layouts . '7.png')
 						);
 
 	$options[] = array( "name" => __("Sidebar Text Alignment", "ortus"),
@@ -156,7 +153,7 @@ function optionsframework_options() {
 						"type" => "checkbox");
 	
 	$options[] = array( "name" => __("Webfonts", "ortus"),
-						"desc" => __("Do you want to use webfonts?", "ortus"),
+						"desc" => __("Do you want to use google webfonts?", "ortus"),
 						"id" => "webfonts",
 						"type" => "checkbox");
 	
@@ -195,6 +192,20 @@ function optionsframework_options() {
 						"class" => "hidden",
 						"type" => "textarea");
 
+	$options[] = array( "name" => __("Navbar", "ortus"),
+						"desc" => __("Add the navbar css here.", "ortus"),
+						"id" => "webfonts_navbar",
+						"std" => "font-family: 'Droid Sans', sans-serif;",
+						"class" => "hidden",
+						"type" => "textarea");
+
+	$options[] = array( "name" => __("Post Slider", "ortus"),
+						"desc" => __("Add the post slider css here.", "ortus"),
+						"id" => "webfonts_slider",
+						"std" => "font-family: 'Droid Sans', sans-serif;",
+						"class" => "hidden",
+						"type" => "textarea");
+
 	$options[] = array( "name" => __("Footer", "ortus"),
 						"desc" => __("Add the footer css here.", "ortus"),
 						"id" => "webfonts_footer",
@@ -222,6 +233,16 @@ function optionsframework_options() {
 						"id" => "desc_typo",
 						"type" => "typography");
 
+	$options[] = array( "name" => __("Navbar", "ortus"),
+						"desc" => __("Default will be used, if nothing selected", "ortus"),
+						"id" => "navbar_typo",
+						"type" => "typography");
+
+	$options[] = array( "name" => __("Post Slider", "ortus"),
+						"desc" => __("Default will be used, if nothing selected", "ortus"),
+						"id" => "slider_typo",
+						"type" => "typography");
+
 	$options[] = array( "name" => __("Footer", "ortus"),
 						"desc" => __("Default will be used, if nothing selected", "ortus"),
 						"id" => "footer_typo",
@@ -243,6 +264,24 @@ function optionsframework_options() {
 						"type" => "radio",
 						"class" => "hidden",
 						"options" => $nav_array);
+
+	$options[] = array( "name" => __("Background Color", "ortus"),
+						"desc" => __("Background Color for the Navbar (If you use a gradient this is the fallback color)", "ortus"),
+						"id" => "navbar_bgc",
+						"type" => "color",
+						"class" => "hidden");
+
+	$options[] = array( "name" => __("First Gradient Color", "ortus"),
+						"desc" => __("The First Gradient Color (Top)", "ortus"),
+						"id" => "navbar_gbgc1",
+						"type" => "color",
+						"class" => "hidden");
+
+	$options[] = array( "name" => __("Second Gradient Color", "ortus"),
+						"desc" => __("The Second Gradient Color (Bottom)", "ortus"),
+						"id" => "navbar_gbgc2",
+						"type" => "color",
+						"class" => "hidden");
 		
 	$options[] = array( "name" => __("Searchfield", "ortus"),
 						"desc" => __("Do you want to show the searchfield? (Default: yes)", "ortus"),
@@ -251,6 +290,49 @@ function optionsframework_options() {
 						"std" => "1",
 						"type" => "checkbox");
 		
+	$options[] = array ("name" => __("Post Slider", "ortus"),
+						"type" => "heading");
+
+	$options[] = array( "name" => __("Post Slider", "ortus"),
+						"desc" => __("Do you want to use a post slider? (Default:no)", "ortus"),
+						"id" => "postslider",
+						"std" => "0",
+						"type" => "checkbox");
+	
+	$options[] = array( "name" => __("Post Category", "ortus"),
+						"desc" => __("Which Category should be displayed in the slider?", "ortus"),
+						"id" => "postslider_cat",
+						"class" => "hidden",
+						"type" => "select",
+						"options" => $categories);
+
+	$options[] = array( "name" => __("Max Posts", "ortus"),
+						"desc" => __("Maximal posts to display in the slider", "ortus"),
+						"id" => "postslider_max",
+						"std" => "5",
+						"class" => "hidden",
+						"type" => "text");
+
+	$options[] = array( "name" => __("Height", "ortus"),
+						"desc" => __("Height of the slider", "ortus"),
+						"id" => "postslider_height",
+						"std" => "350",
+						"class" => "hidden",
+						"type" => "text");
+
+	$options[] = array( "name" => __("Caption Background Color", "ortus"),
+						"desc" => __("The Background color of the caption", "ortus"),
+						"id" => "postslider_caption",
+						"type" => "color",
+						"class" => "hidden");
+
+	$options[] = array( "name" => __("Only on home?", "ortus"),
+						"desc" => __("Do you want to show the slider only at the homepage? (Default:yes)", "ortus"),
+						"id" => "postslider_home",
+						"std" => "1",
+						"class" => "hidden",
+						"type" => "checkbox");
+
 	$options[] = array ("name" => __("Social", "ortus"),
 						"type" => "heading");
 
@@ -279,16 +361,15 @@ function optionsframework_options() {
 						"id" => "social_feed",
 						"type" => "text");
 						
-	$options[] = array ("name" => __("Custom CSS", "ortus"),
+	$options[] = array ("name" => __("Custom", "ortus"),
 						"type" => "heading");
 						
 	$options[] = array( "id" => "custom_css",
+						"name" => __("Custom CSS", "ortus"),
 						"type" => "textarea");
-
-	$options[] = array ("name" => __("Custom JavaScript", "ortus"),
-						"type" => "heading");
 						
 	$options[] = array( "id" => "custom_js",
+						"name" => __("Custom Javascript", "ortus"),
 						"type" => "textarea");
 	
 	return $options;
